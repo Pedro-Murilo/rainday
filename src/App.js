@@ -55,12 +55,13 @@ function App() {
 
   return (
     <>
-      <div>
         <div>
           <video src={RaindayVid} autoPlay muted loop/>
         </div>
+      <div className="main">
         <main>
-          <div>
+          <div className="container">
+          <div className="input-div">
             <input
               type="text"
               placeholder="City..."
@@ -77,14 +78,15 @@ function App() {
                 </h2>
                 <h4>{dateBuilder(new Date())}</h4>
               </div>
-              <div>
-                <p>{Math.round(weather.main.temp)}&deg;c</p>
+              <div className="temp">
+                <p>{Math.round(weather.main.temp)}&deg;C</p>
                 <p>{weather.weather[0].main}</p>
               </div>
             </>
           ) : (
             ""
           )}
+          </div>
         </main>
       </div>
       <GlobalStyle />

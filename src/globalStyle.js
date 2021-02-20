@@ -14,12 +14,4 @@ export const GlobalStyle = createGlobalStyle`
     body {
         font-family: 'Roboto', sans-serif;
     }
-
-    video {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        z-index: -1;
-    }
 `
