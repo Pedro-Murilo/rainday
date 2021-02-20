@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { GlobalStyle } from "./globalStyle";
 
-import "weather-icons/css/weather-icons.css";
 
 const api = {
   key: "9d7ad32e1bb9ab58ca26241ea1d81bfc",
