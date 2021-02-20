@@ -63,6 +63,7 @@ function App() {
       <WeatherContainer>
         <main>
           <Container>
+            <h1>Rain<strong>day</strong></h1>
           <InputContainer>
             <input
               type="text"

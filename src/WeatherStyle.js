@@ -20,6 +20,16 @@ export const Container = styled.div`
     text-align: center;
     box-shadow: 0.3rem 0.3rem 1rem 0.3rem rgba(0, 0, 0, 0.5);
 
+    h1 {
+      color: #109450;
+      font-size: 3.6rem;
+      padding-top: 5rem;
+    }
+
+    strong {
+      color: #d1d1d1;
+    }
+
     h2 {
       font-size: 5.6rem;
     }
@@ -40,7 +50,7 @@ export const Container = styled.div`
 `
 
 export const InputContainer = styled.div`
-      padding-top: 15rem;
+      padding-top: 7rem;
       padding-bottom: 5rem;
 
       input {
