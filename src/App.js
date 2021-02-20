@@ -1,48 +1,50 @@
-import { useState } from "react";
-import { GlobalStyle } from "./globalStyle";
-import RaindayVid from './video/rainday-vid.mp4';
+import { useState } from 'react';
+import { GlobalStyle } from './globalStyle';
+import RaindayVid from './video/rainday.mp4';
+
+import { WeatherContainer, Container, InputContainer } from './WeatherStyle';
 
 const API_KEY = process.env.REACT_APP_KEY;
 const API_BASE = process.env.REACT_APP_BASE;
 
 function App() {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
 
   const search = (event) => {
-    if (event.key === "Enter") {
+    if (event.key === 'Enter') {
       fetch(`${API_BASE}weather?q=${query}&units=metric&APPID=${API_KEY}`)
         .then((res) => res.json())
         .then((result) => {
           setWeather(result);
-          setQuery("");
+          setQuery('');
         });
     }
   };
 
   const dateBuilder = (d) => {
     let months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
     ];
     let days = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
     ];
 
     let day = days[d.getDay()];
@@ -56,20 +58,20 @@ function App() {
   return (
     <>
         <div>
-          <video src={RaindayVid} autoPlay muted loop/>
+          <video src={RaindayVid} autoPlay muted loop />
         </div>
-      <div className="main">
+      <WeatherContainer>
         <main>
-          <div className="container">
-          <div className="input-div">
+          <Container>
+          <InputContainer>
             <input
               type="text"
-              placeholder="City..."
+              placeholder="Search city..."
               onChange={(e) => setQuery(e.target.value)}
               value={query}
               onKeyPress={search}
             />
-          </div>
+          </InputContainer>
           {typeof weather.main !== "undefined" ? (
             <>
               <div>
@@ -86,9 +88,9 @@ function App() {
           ) : (
             ""
           )}
-          </div>
+          </Container>
         </main>
-      </div>
+      </WeatherContainer>
       <GlobalStyle />
     </>
   );

@@ -13,5 +13,14 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: 'Roboto', sans-serif;
+        color: #f29e55;
+    }
+
+    video {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: -1;
     }
 `
