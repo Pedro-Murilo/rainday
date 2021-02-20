@@ -2,11 +2,8 @@ import { useState } from "react";
 import { GlobalStyle } from "./globalStyle";
 import RaindayVid from './video/rainday-vid.mp4';
 
-const api = {
-  base: "https://api.openweathermap.org/data/2.5/",
-};
-
 const API_KEY = process.env.REACT_APP_KEY;
+const API_BASE = process.env.REACT_APP_BASE;
 
 function App() {
   const [query, setQuery] = useState("");
@@ -14,7 +11,7 @@ function App() {
 
   const search = (event) => {
     if (event.key === "Enter") {
-      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${API_KEY}`)
+      fetch(`${API_BASE}weather?q=${query}&units=metric&APPID=${API_KEY}`)
         .then((res) => res.json())
         .then((result) => {
           setWeather(result);
