@@ -60,7 +60,7 @@ function App() {
     <>
       <div>
         <main>
-          <div className="search-box">
+          <div>
             <input
               type="text"
               placeholder="City..."
@@ -71,15 +71,15 @@ function App() {
           </div>
           {typeof weather.main !== "undefined" ? (
             <>
-              <div className="location-box">
-                <div className="locaiton">
+              <div>
+                <h2>
                   {weather.name}, {weather.sys.country}
-                </div>
-                <div className="date">{dateBuilder(new Date())}</div>
+                </h2>
+                <h4>{dateBuilder(new Date())}</h4>
               </div>
-              <div className="weather-box">
-                <div className="temp">{Math.round(weather.main.temp)}&deg;c</div>
-                <div>{weather.weather[0].main}</div>
+              <div>
+                <p>{Math.round(weather.main.temp)}&deg;c</p>
+                <p>{weather.weather[0].main}</p>
               </div>
             </>
           ) : (
