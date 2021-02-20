@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { GlobalStyle } from "./globalStyle";
-
+import RaindayVid from './video/rainday-vid.mp4';
 
 const api = {
   base: "https://api.openweathermap.org/data/2.5/",
@@ -59,6 +59,9 @@ function App() {
   return (
     <>
       <div>
+        <div>
+          <video src={RaindayVid} autoPlay muted loop/>
+        </div>
         <main>
           <div>
             <input
