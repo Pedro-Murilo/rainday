@@ -4,11 +4,8 @@ import RaindayVid from './video/rainday-vid.mp4';
 
 import { WeatherContainer } from './WeatherStyle';
 
-const api = {
-  base: 'https://api.openweathermap.org/data/2.5/',
-};
-
 const API_KEY = process.env.REACT_APP_KEY;
+const API_BASE = process.env.REACT_APP_BASE;
 
 function App() {
   const [query, setQuery] = useState('');
@@ -16,7 +13,7 @@ function App() {
 
   const search = (event) => {
     if (event.key === 'Enter') {
-      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${API_KEY}`)
+      fetch(`${API_BASE}weather?q=${query}&units=metric&APPID=${API_KEY}`)
         .then((res) => res.json())
         .then((result) => {
           setWeather(result);
@@ -62,35 +59,37 @@ function App() {
     <>
       <div>
         <div>
-          {/* <video src={RaindayVid} autoPlay muted loop /> */}
+          <video src={RaindayVid} autoPlay muted loop />
         </div>
         <WeatherContainer>
           <main>
-            <div className='search-content'>
-              <input
-                type="text"
-                placeholder="City..."
-                onChange={(e) => setQuery(e.target.value)}
-                value={query}
-                onKeyPress={search}
-              />
+            <div className="container">
+              <div className="input-container">
+                <input
+                  type="text"
+                  placeholder="City..."
+                  onChange={(e) => setQuery(e.target.value)}
+                  value={query}
+                  onKeyPress={search}
+                />
+              </div>
+              {typeof weather.main !== 'undefined' ? (
+                <>
+                  <div>
+                    <h2>
+                      {weather.name}, {weather.sys.country}
+                    </h2>
+                    <h4>{dateBuilder(new Date())}</h4>
+                  </div>
+                  <div>
+                    <p>{Math.round(weather.main.temp)}&deg;c</p>
+                    <p>{weather.weather[0].main}</p>
+                  </div>
+                </>
+              ) : (
+                ''
+              )}
             </div>
-            {typeof weather.main !== 'undefined' ? (
-              <>
-                <div>
-                  <h2>
-                    {weather.name}, {weather.sys.country}
-                  </h2>
-                  <h4>{dateBuilder(new Date())}</h4>
-                </div>
-                <div>
-                  <p>{Math.round(weather.main.temp)}&deg;c</p>
-                  <p>{weather.weather[0].main}</p>
-                </div>
-              </>
-            ) : (
-              ''
-            )}
           </main>
         </WeatherContainer>
       </div>
