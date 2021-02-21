@@ -34,7 +34,6 @@
 
 ---
 ### ✨ Final Project
-> Netlify: https://rainday-pedro.netlify.app/
 <p align="center">
   <img src="https://github.com/Pedro-Murilo/rainday/blob/main/.github/rainday-vid.gif" alt="Rainday gif" />
 </p>
