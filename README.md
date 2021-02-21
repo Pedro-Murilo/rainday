@@ -15,11 +15,6 @@
   <a href="https://github.com/Pedro-Murilo/">
     <img alt="Developed by Pedro" src="https://img.shields.io/badge/Dev-Pedro-%3498db?color=000&style=for-the-badge">
   </a>
-  
-   <a href="https://github.com/yuukiasuna00/">
-    <img alt="Developed by YuukiAsuna" src="https://img.shields.io/badge/Dev-YuukiAsuna-%3498db?color=000&style=for-the-badge">
-  </a>
-</p>
 
 <div align="center">
   <a href="#-final-project">Final Project</a> |
@@ -40,7 +35,7 @@
 
 ---
 ### 📋 About
-This application is a Weather App, we used the OpenWeather API to fetch the countries and weather. You can search for your city and it will show you the actual date,
+This application is a Weather App, I used the OpenWeather API to fetch the countries and weather. You can search for your city and it will show you the actual date,
 location and weather!
 
 
@@ -77,6 +72,3 @@ location and weather!
 ### 📄 License
 This project is under MIT license. See the [LICENSE](https://github.com/Pedro-Murilo/rainday/blob/main/LICENSE) file for more details.
 
----
-### 🟣 Credits
-Made with ❤ by me and my [friend](https://github.com/yuukiasuna00/)
